@@ -1,5 +1,5 @@
 <?php
-require 'mailer/phpmailer/class.phpmailer.php';
+require 'phpmailer/class.phpmailer.php';
 
 //присваиваем переменные с формы
 
