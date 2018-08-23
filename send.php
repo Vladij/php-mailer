@@ -32,13 +32,18 @@ $mail->AddAddress('email@email.com');   // кому - адрес, Имя
 $mail->IsHTML(true);        // выставляем формат письма HTML
 $mail->Subject = $subject;  // тема письма
 $mail->Body = $message;
-if(isset($_FILES['file_downloade'])) { //добавляем возможность отправки файла на почту через input type="file" с name="files"
+if(isset($_FILES['files'])) { //добавляем возможность отправки !!!файла!!! на почту через input type="file" с name="files"
     if($_FILES['files']['error'] == 0){
         $mail->AddAttachment($_FILES['files']['tmp_name'],
                              $_FILES['files']['name']);
     }
 }
-
+if(isset($_FILES['files'])) { //добавляем возможность отправки !!!изображения!!! на почту через input type="file" с name="files"
+    if($_FILES['files']['error'] == 0){
+        $mail->AddEmbeddedImage($_FILES['files']['tmp_name'],
+            $_FILES['files']['name']);
+    }
+}
 // отправляем наше письмо
 if(!$mail->send()) {
     echo 0;
