@@ -46,9 +46,9 @@ if(isset($_FILES['files'])) { //добавляем возможность отп
 }
 // отправляем наше письмо
 if(!$mail->send()) {
-    echo 0;
+    echo "failed";
 } else {
-    echo 1;
+    echo "Success";
 }
 
 ?>
