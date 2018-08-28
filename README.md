@@ -4,8 +4,8 @@
 
 Чтобы скачать данную библиотеку, пройдите по <a href="https://sourceforge.net/projects/phpmailer/">ссылке</a> ;
 
-Обработчик работает под функцией <b>mail()</b>;
+Обработчик работает под функцией <b>mail()</b>; с ajax.
 
-Version 0.2
+Version 0.3
 
-Update 23.08.2018
+Update 28.08.2018
