@@ -17,7 +17,7 @@
                 type: 'POST',
                 data: forma,
                 success: function (msg) {
-                    if(msg == 'success'){
+                    if(msg == 'success'){//необходимо установить статус ответа
                         $(".up").val("Отправлено");
                     }else{
                         $(".up").val("Ошибка");
