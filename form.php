@@ -5,8 +5,8 @@
     <input type="file" name="files">
     <input type="submit" name="submit" id="up">
 </form>
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"> //подключаем внешнюю библиотеку для выполнения скриптов
+<script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script> //подключаем внешнюю библиотеку для выполнения скриптов
     $(function () {
         $('#form').on('submit', function (e) {
             e.preventDefault();//отключаем событие при нажатии кнопки
@@ -16,16 +16,10 @@
                 url: 'send.php',
                 type: 'POST',
                 data: forma,
-                success: function (msg) {
-                    if(msg == 'success'){//необходимо установить статус ответа
-                        $(".up").val("Отправлено");
-                    }else{
-                        $(".up").val("Ошибка");
-                    }setTimeout(function () {
-                        $(".up").val("Отправить");
-                    }, 3000);
-                }
+                success: function () {
+                        $("#up").val("Отправлено");
+                    }
+                });
             });
         });
-    });
 </script>
